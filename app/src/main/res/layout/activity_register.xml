@@ -7,4 +7,150 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Nombre"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvNombreValidator"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Este es un texto de prueba"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/etNombre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/red"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etApellido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombreValidator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Apellido"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvApellidoValidator"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Este es un texto de prueba"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/etApellido"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/red"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etDni"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tvApellidoValidator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Dni"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDniValidator"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Este es un texto de prueba"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/etDni"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/red"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tvDniValidator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Email"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvEmailValidator"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Este es un texto de prueba"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/red"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmailValidator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Username"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvUsernameValidator"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Este es un texto de prueba"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/etUsername"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/red"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tvUsernameValidator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:inputType="textPassword"
+        android:hint="Password"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPasswordValidator"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Este es un texto de prueba"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/red"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tvPasswordValidator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Registrarse"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tv_go_to_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegister"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Regresar a Login"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
