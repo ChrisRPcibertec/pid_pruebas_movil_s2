@@ -3,6 +3,8 @@ package com.example.pi_movil_grupo01
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -22,22 +24,21 @@ import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
 
-
     private lateinit var etEmail: EditText
     private lateinit var etPassword: EditText
     private lateinit var btnLogin: Button
     private lateinit var tcGoRegister: TextView
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
 
         etEmail = findViewById(R.id.etEmail)
         etPassword = findViewById(R.id.etPassword)
         btnLogin = findViewById(R.id.btn_go_to_menu)
         tcGoRegister = findViewById(R.id.tv_go_to_register)
+
+        etEmail.addTextChangedListener(emailWatcher)
 
         val preferences: SharedPreferences = PreferenceHelper.defaultPrefs(this)
         if (preferences.getBoolean("session", false)) {
@@ -52,8 +53,6 @@ class LoginActivity : AppCompatActivity() {
             goToRegister()
         }
 
-
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -61,12 +60,21 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-
+    private val emailWatcher = object : TextWatcher {
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(s.toString()).matches()) {
+                etEmail.error = "Correo electrónico no válido"
+            } else {
+                etEmail.error = null
+            }
+        }
+        override fun afterTextChanged(s: Editable?) {}
+    }
 
     private fun login() {
         val email = etEmail.text.toString()
         val password = etPassword.text.toString()
-
 
         if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Por favor ingresa tus credenciales", Toast.LENGTH_SHORT).show()
