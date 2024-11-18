@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">pi-movil-grupo01</string>
+    <string name="login_saludo_ln1">¡Bienvenid@ de regreso a CheckIt!</string>
+    <string name="login_saludo_ln2">Por favor, ingresa tus credenciales.</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
 </resources>
