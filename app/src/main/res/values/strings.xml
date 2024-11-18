@@ -2,8 +2,10 @@
     <string name="app_name">pi-movil-grupo01</string>
     <string name="login_saludo_ln1">¡Bienvenid@ de regreso a CheckIt!</string>
     <string name="login_saludo_ln2">Por favor, ingresa tus credenciales.</string>
+    <string name="preguntaRegistro">¿No estás registrado?</string>
+    <string name="loginSugerencia">También puedes usar las siguientes plataformas</string>
     <string name="login_saludo_registro_ln1">¡Es un gusto tenerte con nosotros!</string>
-    <string name="login_saludo_registro_ln2">Por favor, completa el formulario de registros.</string>
+    <string name="login_saludo_registro_ln2">Por favor, completa el formulario de registro.</string>
     <string name="title_activity_dashboard">DashboardActivity</string>
     <string name="title_activity_register">RegisterActivity</string>
 </resources>
