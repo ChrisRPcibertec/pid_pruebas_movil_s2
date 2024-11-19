@@ -3,6 +3,7 @@ package com.example.pi_movil_grupo01.service
 import com.example.pi_movil_grupo01.entity.AuthRequest
 import com.example.pi_movil_grupo01.entity.AuthResponse
 import com.example.pi_movil_grupo01.entity.RegisterRequest
+import com.example.pi_movil_grupo01.entity.RegisterResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
@@ -13,5 +14,5 @@ interface AuthService {
     fun login(@Body authRequest: AuthRequest): Call<AuthResponse>
 
     @POST("auth/register")
-    fun register(@Body registerRequest: RegisterRequest): Call<AuthResponse>
+    fun register(@Body registerRequest: RegisterRequest): Call<RegisterResponse>
 }
