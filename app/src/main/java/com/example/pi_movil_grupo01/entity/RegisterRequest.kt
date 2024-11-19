@@ -4,5 +4,7 @@ data class RegisterRequest(
     var nombre: String,
     var apellido: String,
     var email: String,
-    var password: String
+    var password: String,
+    var username: String,
+    var dni: String
 )
