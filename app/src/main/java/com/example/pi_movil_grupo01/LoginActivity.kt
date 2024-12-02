@@ -87,11 +87,16 @@ class LoginActivity : AppCompatActivity() {
         service.login(request).enqueue(object : Callback<AuthResponse> {
             override fun onResponse(call: Call<AuthResponse>, response: Response<AuthResponse>) {
                 if (response.isSuccessful && response.body() != null) {
-                    val token = response.body()!!.token
+                    val authResponse = response.body()!!
 
-                    PreferenceHelper.defaultPrefs(this@LoginActivity).edit()
-                        .putString("auth_token", token)
-                        .putBoolean("session", true)
+                    // Almacenar los datos en SharedPreferences
+                    val preferences = PreferenceHelper.defaultPrefs(this@LoginActivity)
+                    preferences.edit()
+                        .putString("auth_token", authResponse.token)
+                        .putString("username", authResponse.username) // Guardar el nombre de usuario
+                        .putInt("user_id", authResponse.id) // Guardar el ID del usuario
+                        .putString("email", authResponse.email) // Guardar el correo electrónico
+                        .putBoolean("session", true) // Indicar que la sesión está activa
                         .apply()
 
                     Toast.makeText(this@LoginActivity, "Login exitoso", Toast.LENGTH_SHORT).show()
